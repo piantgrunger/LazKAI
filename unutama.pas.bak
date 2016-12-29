@@ -54,7 +54,7 @@ procedure TForm1.FormCreate(Sender: TObject);
 var i :integer;
     JData : TJSONData;
 begin
-   JData := GetJSON(TFPHTTPClient.SimpleGet('http://ibacor.com/api/kereta-api?k=edb4eae8626733eab8d694e395cb3096'));
+   JData := GetJSON(TFPHTTPClient.SimpleGet(API_SOURCE+API_KEY));
 
 
    if (JData.Items[0].AsString) = 'success' then

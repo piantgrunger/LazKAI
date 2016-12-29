@@ -3,6 +3,7 @@ object Form1: TForm1
   Height = 433
   Top = 0
   Width = 780
+  ActiveControl = cmb_jadwal
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Jadwal Kereta API Indonesia v.0.0.1'

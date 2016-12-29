@@ -8,12 +8,12 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
   Grids, fpjson, jsonparser, fphttpclient, LazUTF8;
 
-{ TForm1 }
+{ TFrUtama }
 Const API_KEY ='k=edb4eae8626733eab8d694e395cb3096';
        API_SOURCE='http://ibacor.com/api/kereta-api?';
 
 type
-  TForm1 = class(TForm)
+  TFrUtama = class(TForm)
     Button1: TButton;
     cmb_jadwal: TComboBox;
     cmb_kota_asal: TComboBox;
@@ -37,7 +37,7 @@ type
   end;
 
 var
-  Form1: TForm1;
+  FrUtama: TFrUtama;
   JDataTanggal : TJSONObject;
   JDataKota : TJSONObject;
   JDataStasiun : TJSONObject;
@@ -48,9 +48,9 @@ implementation
 
 {$R *.lfm}
 
-{ TForm1 }
+{ TFrUtama }
 
-procedure TForm1.FormCreate(Sender: TObject);
+procedure TFrUtama.FormCreate(Sender: TObject);
 var i :integer;
     JData : TJSONData;
 begin
@@ -93,7 +93,7 @@ end;
 
 
 
-procedure TForm1.Button1Click(Sender: TObject);
+procedure TFrUtama.Button1Click(Sender: TObject);
 var jadwal : String;
     stAsal:string;
     stTuj:string;
@@ -132,7 +132,7 @@ begin
 
 end;
 
-procedure TForm1.cmb_kota_asalChange(Sender: TObject);
+procedure TFrUtama.cmb_kota_asalChange(Sender: TObject);
 var i : integer;
 begin
   cmb_stasiun_asal.Items.Clear;
@@ -143,7 +143,7 @@ begin
 
 end;
 
-procedure TForm1.cmb_kota_tujChange(Sender: TObject);
+procedure TFrUtama.cmb_kota_tujChange(Sender: TObject);
 var i : integer;
 begin
   cmb_stasiun_tuj.Items.Clear;
