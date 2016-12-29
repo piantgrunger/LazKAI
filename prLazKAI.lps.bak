@@ -4,7 +4,7 @@
     <PathDelim Value="\"/>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="2">
+    <Units Count="3">
       <Unit0>
         <Filename Value="prLazKAI.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -21,13 +21,113 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unUtama"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="130"/>
-        <CursorPos X="48" Y="43"/>
+        <TopLine Value="36"/>
+        <CursorPos Y="57"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
+      <Unit2>
+        <Filename Value="C:\Development\FreePascal\lazarus\lcl\include\application.inc"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="2141"/>
+        <CursorPos Y="2163"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit2>
     </Units>
-    <JumpHistory HistoryIndex="-1"/>
+    <JumpHistory Count="20" HistoryIndex="19">
+      <Position1>
+        <Filename Value="prLazKAI.lpr"/>
+        <Caret Line="20"/>
+      </Position1>
+      <Position2>
+        <Filename Value="prLazKAI.lpr"/>
+        <Caret Line="10" Column="10"/>
+      </Position2>
+      <Position3>
+        <Filename Value="prLazKAI.lpr"/>
+        <Caret Line="16"/>
+      </Position3>
+      <Position4>
+        <Filename Value="prLazKAI.lpr"/>
+        <Caret Line="17"/>
+      </Position4>
+      <Position5>
+        <Filename Value="prLazKAI.lpr"/>
+        <Caret Line="18"/>
+      </Position5>
+      <Position6>
+        <Filename Value="unutama.pas"/>
+        <Caret Line="43" Column="48" TopLine="130"/>
+      </Position6>
+      <Position7>
+        <Filename Value="C:\Development\FreePascal\lazarus\lcl\include\application.inc"/>
+        <Caret Line="2157" TopLine="2141"/>
+      </Position7>
+      <Position8>
+        <Filename Value="C:\Development\FreePascal\lazarus\lcl\include\application.inc"/>
+        <Caret Line="2159" TopLine="2141"/>
+      </Position8>
+      <Position9>
+        <Filename Value="C:\Development\FreePascal\lazarus\lcl\include\application.inc"/>
+        <Caret Line="2160" TopLine="2141"/>
+      </Position9>
+      <Position10>
+        <Filename Value="C:\Development\FreePascal\lazarus\lcl\include\application.inc"/>
+        <Caret Line="2161" TopLine="2141"/>
+      </Position10>
+      <Position11>
+        <Filename Value="C:\Development\FreePascal\lazarus\lcl\include\application.inc"/>
+        <Caret Line="2162" TopLine="2141"/>
+      </Position11>
+      <Position12>
+        <Filename Value="unutama.pas"/>
+        <Caret Line="65" Column="81" TopLine="46"/>
+      </Position12>
+      <Position13>
+        <Filename Value="unutama.pas"/>
+        <Caret Line="57" TopLine="46"/>
+      </Position13>
+      <Position14>
+        <Filename Value="prLazKAI.lpr"/>
+        <Caret Line="16"/>
+      </Position14>
+      <Position15>
+        <Filename Value="unutama.pas"/>
+        <Caret Line="65" Column="74" TopLine="13"/>
+      </Position15>
+      <Position16>
+        <Filename Value="unutama.pas"/>
+        <Caret Line="57" Column="46" TopLine="55"/>
+      </Position16>
+      <Position17>
+        <Filename Value="unutama.pas"/>
+        <Caret Line="30" Column="33" TopLine="18"/>
+      </Position17>
+      <Position18>
+        <Filename Value="unutama.pas"/>
+        <Caret Line="56" Column="22" TopLine="35"/>
+      </Position18>
+      <Position19>
+        <Filename Value="prLazKAI.lpr"/>
+        <Caret Line="16"/>
+      </Position19>
+      <Position20>
+        <Filename Value="prLazKAI.lpr"/>
+        <Caret Line="20"/>
+      </Position20>
+    </JumpHistory>
   </ProjectSession>
+  <Debugging>
+    <BreakPoints Count="1">
+      <Item1>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="unutama.pas"/>
+        <Line Value="56"/>
+      </Item1>
+    </BreakPoints>
+  </Debugging>
 </CONFIG>

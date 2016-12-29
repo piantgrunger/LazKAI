@@ -15,6 +15,7 @@ Const API_KEY ='k=edb4eae8626733eab8d694e395cb3096';
 type
   TFrUtama = class(TForm)
     Button1: TButton;
+    Button2: TButton;
     cmb_jadwal: TComboBox;
     cmb_kota_asal: TComboBox;
     cmb_kota_tuj: TComboBox;
@@ -27,6 +28,7 @@ type
     Label5: TLabel;
     sgr_jadwal: TStringGrid;
     procedure Button1Click(Sender: TObject);
+    procedure getDataFromServer;
     procedure cmb_kota_asalChange(Sender: TObject);
     procedure cmb_kota_tujChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -51,44 +53,8 @@ implementation
 { TFrUtama }
 
 procedure TFrUtama.FormCreate(Sender: TObject);
-var i :integer;
-    JData : TJSONData;
 begin
-   JData := GetJSON(TFPHTTPClient.SimpleGet(API_SOURCE+API_KEY));
-
-
-   if (JData.Items[0].AsString) = 'success' then
-   begin
-     JDataTanggal :=  TJSONObject(JData.FindPath('data').FindPath('tanggal'));
-     For i:=0 to JDataTanggal.Count-1 do
-       cmb_jadwal.Items.Add(JDataTanggal.Items[i].FindPath('name').AsString);
-     cmb_jadwal.ItemIndex:=0;
-
-     JDataKota :=  TJSONObject(JData.FindPath('data').FindPath('stasiun'));
-     For i:=0 to JDataKota.Count-1 do
-       cmb_kota_asal.Items.Add(JDataKota.Items[i].FindPath('kota').AsString);
-     cmb_kota_asal.ItemIndex:=0;
-
-     cmb_stasiun_asal.Items.Clear;
-     JDataStasiun := TJSONObject(JDataKota.Items[0].FindPath('list'));
-      For i:=0 to JDataStasiun.Count-1 do
-          cmb_stasiun_asal.Items.Add(JDataStasiun.Items[i].FindPath('name').AsString);
-        cmb_stasiun_asal.ItemIndex:=0;
-
-      For i:=0 to JDataKota.Count-1 do
-       cmb_kota_tuj.Items.Add(JDataKota.Items[i].FindPath('kota').AsString);
-     cmb_kota_tuj.ItemIndex:=0;
-
-      For i:=0 to JDataStasiun.Count-1 do
-          cmb_stasiun_tuj.Items.Add(JDataStasiun.Items[i].FindPath('name').AsString);
-        cmb_stasiun_tuj.ItemIndex:=0;
-
-   end
-   else
-   begin
-       Raise Exception.Create('Gagal Konek !!!');
-   end;
-
+   getDataFromServer;
 end;
 
 
@@ -129,6 +95,55 @@ begin
 
 
    end;
+
+end;
+
+procedure TFrUtama.getDataFromServer;
+var i :integer;
+    JData : TJSONData;
+begin
+   try
+     TFPHTTPClient.SimpleGet('http://ibacor.com/api/kereta-api?k=edb4eae8626733eab8d694e395cb3096')
+   except
+      Raise Exception.Create('Tidak Bisa Mengambil Jadwal dari Web ');
+
+   end;
+
+   JData := GetJSON(TFPHTTPClient.SimpleGet('http://ibacor.com/api/kereta-api?k=edb4eae8626733eab8d694e395cb3096'));
+
+
+   if (JData.Items[0].AsString) = 'success' then
+   begin
+     JDataTanggal :=  TJSONObject(JData.FindPath('data').FindPath('tanggal'));
+     For i:=0 to JDataTanggal.Count-1 do
+       cmb_jadwal.Items.Add(JDataTanggal.Items[i].FindPath('name').AsString);
+     cmb_jadwal.ItemIndex:=0;
+
+     JDataKota :=  TJSONObject(JData.FindPath('data').FindPath('stasiun'));
+     For i:=0 to JDataKota.Count-1 do
+       cmb_kota_asal.Items.Add(JDataKota.Items[i].FindPath('kota').AsString);
+     cmb_kota_asal.ItemIndex:=0;
+
+     cmb_stasiun_asal.Items.Clear;
+     JDataStasiun := TJSONObject(JDataKota.Items[0].FindPath('list'));
+      For i:=0 to JDataStasiun.Count-1 do
+          cmb_stasiun_asal.Items.Add(JDataStasiun.Items[i].FindPath('name').AsString);
+        cmb_stasiun_asal.ItemIndex:=0;
+
+      For i:=0 to JDataKota.Count-1 do
+       cmb_kota_tuj.Items.Add(JDataKota.Items[i].FindPath('kota').AsString);
+     cmb_kota_tuj.ItemIndex:=0;
+
+      For i:=0 to JDataStasiun.Count-1 do
+          cmb_stasiun_tuj.Items.Add(JDataStasiun.Items[i].FindPath('name').AsString);
+        cmb_stasiun_tuj.ItemIndex:=0;
+
+   end
+   else
+   begin
+       Raise Exception.Create('Gagal Konek !!!');
+   end;
+
 
 end;
 

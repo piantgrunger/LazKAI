@@ -10,7 +10,6 @@ object FrUtama: TFrUtama
   ClientHeight = 433
   ClientWidth = 780
   OnCreate = FormCreate
-  LCLVersion = '1.7'
   Visible = False
   object cmb_jadwal: TComboBox
     Left = 32
@@ -100,9 +99,9 @@ object FrUtama: TFrUtama
     TabOrder = 4
   end
   object Button1: TButton
-    Left = 198
+    Left = 371
     Height = 25
-    Top = 189
+    Top = 182
     Width = 75
     Caption = 'Cari'
     OnClick = Button1Click
@@ -145,5 +144,14 @@ object FrUtama: TFrUtama
       0
       'Ket'
     )
+  end
+  object Button2: TButton
+    Left = 283
+    Height = 25
+    Top = 182
+    Width = 75
+    Caption = 'Connect'
+    OnClick = Button1Click
+    TabOrder = 7
   end
 end
